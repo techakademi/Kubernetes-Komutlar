@@ -1,14 +1,35 @@
-################################# KUBERNETES CHEAT SHEET #############################################
+⎈⎈⎈⎈⎈ KUBERNETES SIKLIKLA KULLANILAN KOMUTLAR ⎈⎈⎈⎈⎈
+---
 
-########### VIEWING RESOURCE INFORMATION ###############
-# nodes
+## Nodelar ile alakalı komutlar:
+
+```
 kubectl get no
+```
+
+```
 kubectl get no -o wide
+```
+
+```
 kubectl describe no
+```
+
+```
 kubectl get no -o yaml
+```
+
+```
 kubectl get node --selector=[label_name]
+```
+
+```
 kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+```
+
+```
 kubectl top node [node_name]
+```
 
 # pods
 kubectl get po
