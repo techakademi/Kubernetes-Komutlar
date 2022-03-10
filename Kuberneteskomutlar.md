@@ -182,68 +182,138 @@ kubectl logs [pod_name] > pod.log
 ```
 ___
 
-# service accounts
-kubectl get sa
-kubectl get sa -o yaml
-kubectl get serviceaccounts default -o yaml > ./sa.yaml
-kubectl replace serviceaccount default -f ./sa.yaml
+## Replicaset'ler ile alakalı komutlar:
 
-# replicasets
+```
 kubectl get rs
+```
+
+```
 kubectl describe rs
+```
+
+```
 kubectl get rs -o wide
+```
+
+```
 kubectl get rs -o yaml
+```
+___
 
-# roles
+## Rol'ler ile alakalı komutlar:
+
+```
 kubectl get roles --all-namespaces
+```
+
+```
 kubectl get roles --all-namespaces -o yaml
+```
+___
 
-# secrets
+
+## Secret'lar ile alakalı komutlar:
+
+```
 kubectl get secrets
+```
+
+```
 kubectl get secrets --all-namespaces
+```
+
+```
 kubectl get secrets -o yaml
+```
+___
 
-# configmaps
+## Configmap'lar ile alakalı komutlar:
+
+```
 kubectl get cm
+```
+
+```
 kubectl get cm --all-namespaces
+```
+
+```
 kubectl get cm --all-namespaces -o yaml
+```
+___
 
-# ingress
+## Ingress ile alakalı komutlar:
+
+```
 kubectl get ing
+```
+
+```
 kubectl get ing --all-namespaces
+```
+___
 
-# persistentvolumes
+
+## Persistent Volume ile alakalı komutlar:
+
+```
 kubectl get pv
+```
+
+```
 kubectl describe pv
+```
 
-# persistentvolumeclaims
-kubectl get pv 
+```
+kubectl get pvc 
+```
+
+```
 kubectl describe pvc
+```
 
-# storageclass
+## StorageClass ile alakalı komutlar:
+
+```
 kubectl get sc
+```
+
+```
 kubectl get sc -o yaml
+```
+___
 
-# multiple resources
+## Birden fazla kaynağı görütüleme komutları:
+
+```
 kubectl get svc, po
+```
+
+```
 kubectl get deploy, no
+```
+
+```
 kubectl get all
+```
+
+```
 kubectl get all --all-namespaces
+```
+___
 
-########### CHANGING RESOURCE ATTRIBUTES ###############
-# taint
-kubectl taint [node_name] [taint_name]
 
-# labels
+## Etiketleme (Label) komutları:
+
+```
 kubectl label [node_name] disktype=ssd
+```
+
+```
 kubrectl label [pod_name] env=prod
-
-# cordon/uncordon
-kubectl cordon [node_name]
-kubectl uncordon [node_name]
-
-# drain
-kubectl drain [node_name]
+```
+|||
 
 # nodes/pods
 kubectl delete node [node_name]
