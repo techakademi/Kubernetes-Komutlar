@@ -23,25 +23,47 @@ kubectl get no -o yaml
 ```
 kubectl get node --selector=[label_name]
 ```
+___
+
+
+## Pod'lar ile alakalı komutlar:
 
 ```
-kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
-```
-
-```
-kubectl top node [node_name]
-```
-
-# pods
 kubectl get po
+```
+
+```
 kubectl get po -o wide
+```
+
+```
 kubectl describe po
+```
+
+```
 kubectl get po --show-labels
-kubectl get po -l app=nginx
+```
+
+```
+kubectl get po -l app=techakademi/merhabadunya
+```
+
+```
 kubectl get po -o yaml
+```
+
+```
 kubectl get pod [pod_name] -o yaml --export
-kubectl get pod [pod_name] -o yaml --export > nameoffile.yaml
+```
+
+```
+kubectl get pod [pod_name] -o yaml --export > belgeismi.yaml
+```
+
+```
 kubectl get pods --field-selector status.phase=Running
+```
+
 
 # namespaces
 kubectl get ns
