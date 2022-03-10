@@ -428,4 +428,6 @@ kubectl create svc nodeport [Servis adı] --tcp=8080:80
 
 ## Pod arabirimine erişim komutu:
 
+```
 kubectl run [Pod adı] --image=busybox --rm -it --restart=Never -- sh
+```
