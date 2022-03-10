@@ -1,5 +1,6 @@
-⎈⎈⎈⎈⎈ KUBERNETES SIKLIKLA KULLANILAN KOMUTLAR ⎈⎈⎈⎈⎈
----
+___
+# ⎈⎈⎈⎈⎈ KUBERNETES'de SIKLIKLA KULLANILAN KOMUTLAR ⎈⎈⎈⎈⎈
+
 
 ## Nodelar ile alakalı komutlar:
 
