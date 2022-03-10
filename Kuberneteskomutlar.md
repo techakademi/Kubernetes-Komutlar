@@ -313,13 +313,40 @@ kubectl label [node_name] disktype=ssd
 ```
 kubrectl label [pod_name] env=prod
 ```
-|||
+___
 
-# nodes/pods
-kubectl delete node [node_name]
+
+
+## Pod'lar ile alakalı komutlar:
+
+```
+kubectl create -f [manifest_belge_adı]
+```
+
+```
+kubectl apply -f [manifest_belge_adı]
+```
+
+```
+kubectl run [pod_name] --image=nginx --restart=Never
+```
+
+```
+kubectl run [pod_name] --generator=run-pod/v1 --image=nginx
+```
+
+```
+kubectl run [pod_name] --image=nginx --restart=Never
+```
+
+```
 kubectl delete pod [pod_name]
-kubectl edit node [node_name]
+```
+
+```
 kubectl edit pod [pod_name] 
+```
+___
 
 # deployments/namespaces
 kubectl edit deploy [deploy_name]
