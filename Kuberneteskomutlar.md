@@ -317,7 +317,7 @@ ___
 
 
 
-## Pod'lar ile alakalı komutlar:
+## Pod oluşturma & değiştirme & silme komutları:
 
 ```
 kubectl create -f [manifest_belge_adı]
@@ -348,63 +348,90 @@ kubectl edit pod [pod_name]
 ```
 ___
 
-# deployments/namespaces
-kubectl edit deploy [deploy_name]
-kubectl delete deploy [deploy_name]
-kubectl expose deploy [deploy_name] --port=80 --type=NodePort
-kubectl scale deploy [deploy_name] --replicas=5
-kubectl delete ns 
-kubectl edit ns [ns_name]
+## Deployment/Namespace oluşturma & değiştirme & silme komutları:
 
-# services
-kubectl edit svc [svc_name]
-kubectl delete svc [svc_name]
-
-# daemonsets
-kubectl edit ds [ds_name] -n kube-system
-kubectl delete ds [ds_name]
-
-# serviceaccounts
-kubectl edit sa [sa_name]
-kubectl delete sa [sa_name]
-
-# annotate
-kubectl annotate po [pod_name] [annotation]
-kubectl annotate no [node_name]
-
-########### ADDING RESOURCES ###############
-# creating a pod
+```
 kubectl create -f [name_of_file]
-kubectl apply -f [name_of_file]
-kubectl run [pod_name] --image=nginx --restart=Never
-kubectl run [pod_name] --generator=run-pod/v1 --image=nginx
-kubectl run [pod_name] --image=nginx --restart=Never
+```
 
-# creating a service
-kubectl create svc nodeport [svc_name] --tcp=8080:80
-
-# creating a deployment
-kubectl create -f [name_of_file]
+```
 kubectl apply -f [name_of_file]
+```
+
+```
 kubectl create deploy [deploy_name] --image=nginx
+```
 
-# interactive pod
-kubectl run [pod_name] --image=busybox --rm -it --restart=Never -- sh
+```
+kubectl edit deploy [Deployment adı]
+```
+
+```
+kubectl delete deploy [Deployment adı]
+```
+
+```
+kubectl expose deploy [Deployment adı] --port=80 --type=NodePort
+```
+
+```
+kubectl scale deploy [Deployment adı] --replicas=5
+```
+
+```
+kubectl delete ns 
+```
+
+```
+kubectl edit ns [Namespace adı]
+```
+___
+
+## Servis değiştirme & silme komutları:
+
+```
+kubectl edit svc [Servis adı]
+```
+
+```
+kubectl delete svc [Servis adı]
+```
+___
+
+## Daemonset değiştirme & silme komutları:
+
+```
+kubectl edit ds [Daemonset adı] -n kube-system
+```
+
+```
+kubectl delete ds [Daemonset adı]
+```
+___
+
+## Service account değiştirme & silme komutları:
+
+```
+kubectl edit sa [sa_name]
+```
+
+```
+kubectl delete sa [sa_name]
+```
+___
+
+## Service oluşturma komutları:
+
+```
+kubectl create svc nodeport [Servis adı] --tcp=8080:80
+```
+
+## Pod arabirimine erişim komutu:
+
+kubectl run [Pod adı] --image=busybox --rm -it --restart=Never -- sh
 
 # output YAML to a file
 kubectl create deploy [deploy_name] --image=nginx --dry-run -o yaml > deploy.yaml
 kubectl get po [pod_name] -o yaml --export > pod.yaml
 
-# getting help
-kubectl -h 
-kubectl create -h
-kubectl run -h
-kubectl explain deploy.spec
 
-# API calls
-kubectl get --raw /apis/metrics.k8s.io/
-
-# cluster info
-kubectl config 
-kubectl cluster-info
-kubectl get componentstatuses
