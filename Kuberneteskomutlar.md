@@ -63,43 +63,124 @@ kubectl get pod [pod_name] -o yaml --export > belgeismi.yaml
 ```
 kubectl get pods --field-selector status.phase=Running
 ```
+___
 
+## Namespace'lar ile alakalı komutlar:
 
-# namespaces
+```
 kubectl get ns
+```
+
+```
 kubectl get ns -o yaml
+```
+
+```
 kubectl describe ns
+```
+___
 
-# deployments
+## Deployment'lar ile alakalı komutlar:
+
+```
 kubectl get deploy
+```
+
+```
 kubectl describe deploy
+```
+
+```
 kubectl get deploy -o wide
+```
+
+```
 kubectl get deploy -o yaml
+```
+___
 
-# services
+
+## Servis'ler ile alakalı komutlar:
+
+```
 kubectl get svc
+```
+
+```
 kubectl describe svc
+```
+
+```
 kubectl get svc -o wide
+```
+
+```
 kubectl get svc -o yaml
+```
+
+```
 kubectl get svc --show-labels
+```
+___
 
-# daemonsets
+
+## Daemonset'ler ile alakalı komutlar:
+
+```
 kubectl get ds
+```
+
+```
 kubectl get ds --all-namespaces
+```
+
+```
 kubectl describe ds [daemonset_name] -n [namespace_name]
+```
+
+```
 kubectl get ds [ds_name] -n [ns_name] -o yaml
+```
+___
 
-# events
-$ kubectl get events
-$ kubectl get events -n kube-system
-$ kubectl get events -w
+## Event'ler ile alakalı komutlar:
 
-# logs
+```
+kubectl get events
+```
+
+```
+kubectl get events -n kube-system
+```
+
+```
+kubectl get events -w
+```
+___
+
+
+## Log'lar ile alakalı komutlar:
+
+```
 kubectl logs [pod_name]
+```
+
+```
 kubectl logs --since=1h [pod_name]
+```
+
+```
 kubectl logs --tail=20 [pod_name]
+```
+
+```
 kubectl logs -f -c [container_name] [pod_name]
+```
+
+```
 kubectl logs [pod_name] > pod.log
+```
+___
 
 # service accounts
 kubectl get sa
