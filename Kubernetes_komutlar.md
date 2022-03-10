@@ -429,9 +429,3 @@ kubectl create svc nodeport [Servis adı] --tcp=8080:80
 ## Pod arabirimine erişim komutu:
 
 kubectl run [Pod adı] --image=busybox --rm -it --restart=Never -- sh
-
-# output YAML to a file
-kubectl create deploy [deploy_name] --image=nginx --dry-run -o yaml > deploy.yaml
-kubectl get po [pod_name] -o yaml --export > pod.yaml
-
-
